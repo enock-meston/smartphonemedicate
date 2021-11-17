@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registration Form"
+        android:textSize="32sp"
+        android:textColor="@color/purple_700"
+        android:paddingBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/purple_700"
+            android:text="Names" />
+
+        <EditText
+            android:id="@+id/editTextTextnames"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/inputdis"
+            android:ems="10"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/purple_700"
+            android:text="Phone Number" />
+
+        <EditText
+            android:id="@+id/editTextphone"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/inputdis"
+            android:ems="10"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="phone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/purple_700"
+            android:text="UserName" />
+
+        <EditText
+            android:id="@+id/editTextusername"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/inputdis"
+            android:ems="10"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/purple_700"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/editTextpass"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/inputdis"
+            android:ems="10"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/purple_700"
+            android:text="Disease" />
+
+        <EditText
+            android:id="@+id/editTextdisease"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/inputdis"
+            android:ems="10"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/savebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"/>
+
+</LinearLayout>

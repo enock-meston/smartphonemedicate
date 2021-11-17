@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Pills"
+        android:textSize="32sp"
+        android:textColor="@color/purple_700"
+        android:paddingBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/purple_700"
+            android:text="Pills Name" />
+
+        <EditText
+            android:id="@+id/editTextTextPillsname"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/inputdis"
+            android:ems="10"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/savebtn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save"/>
+
+</LinearLayout>
