@@ -42,6 +42,7 @@ public class ListPetientFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_list,container,false);
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler);
         fetchingJSON();
+        dataModelArrayList = new ArrayList<>();
         setupRecycler();
         return v;
     }
