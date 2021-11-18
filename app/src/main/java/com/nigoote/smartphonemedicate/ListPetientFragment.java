@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,29 +57,22 @@ public class ListPetientFragment extends Fragment {
 
                         Log.d("strrrrr", ">>" + response);
 
-                        try {
-                            JSONObject obj = new JSONObject(response);
-                            if(obj.optString("selected").equals("selected")){
+                        Gson gson = new Gson();
 
-                                dataModelArrayList = new ArrayList<>();
-                                JSONArray dataArray  = obj.getJSONArray("code1");
+                        DataModel[] dataModels = gson.fromJson(response, DataModel[].class);
+                        System.out.println(dataModels);
+                        for (DataModel obj1 : dataModels) {
+                            System.out.println(obj1);
+                            //DataModel obj = (DataModel) obj1;
 
-                                for (int i = 0; i < dataArray.length(); i++) {
-
-                                    DataModel playerModel = new DataModel();
-                                    JSONObject dataobj = dataArray.getJSONObject(i);
-
-                                    playerModel.setNames(dataobj.getString("names"));
-                                    playerModel.setPhone(dataobj.getString("phoneNumber"));
-                                    playerModel.setDisease(dataobj.getString("disease"));
-                                    dataModelArrayList.add(playerModel);
-                                }
-
+                            if (obj1.getCode1().equals("selected")) {
+                                dataModelArrayList.add(obj1);
                             }
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            setupRecycler();
                         }
+                        System.out.println(dataModelArrayList); // i'm so
+
                     }
                 },
                 new Response.ErrorListener() {

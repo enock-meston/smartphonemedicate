@@ -32,7 +32,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RvAdapter.MyViewHolder holder, int position) {
         holder.nameH.setText(dataModelArrayList.get(position).getNames());
-        holder.phoneH.setText(dataModelArrayList.get(position).getPhone());
+        holder.phoneH.setText(dataModelArrayList.get(position).getPhoneNumber());
         holder.diseaseH.setText(dataModelArrayList.get(position).getDisease());
     }
 

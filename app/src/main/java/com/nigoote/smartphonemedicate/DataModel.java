@@ -1,29 +1,44 @@
 package com.nigoote.smartphonemedicate;
 
 public class DataModel {
-    private String Names,Phone,Disease;
+    private String names,phoneNumber,disease,code1;
 
     public String getNames() {
-        return Names;
+        return names;
     }
 
     public void setNames(String names) {
-        Names = names;
+        this.names = names;
     }
 
-    public String getPhone() {
-        return Phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        Phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getDisease() {
-        return Disease;
+        return disease;
     }
 
     public void setDisease(String disease) {
-        Disease = disease;
+        this.disease = disease;
+    }
+
+    public String getCode1() {
+        return code1;
+    }
+
+    public void setCode1(String code1) {
+        this.code1 = code1;
+    }
+
+    public DataModel(String names, String phoneNumber, String disease, String code1) {
+        this.names = names;
+        this.phoneNumber = phoneNumber;
+        this.disease = disease;
+        this.code1 = code1;
     }
 }
