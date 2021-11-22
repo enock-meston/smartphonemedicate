@@ -33,13 +33,13 @@
             android:textColor="@color/purple_700"
             android:textSize="34sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/txtphonelg"
+            app:layout_constraintBottom_toTopOf="@+id/txtuserlg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <EditText
-            android:id="@+id/txtphonelg"
+            android:id="@+id/txtuserlg"
             android:layout_width="328dp"
             android:layout_height="61dp"
             android:layout_marginStart="16dp"
@@ -71,7 +71,7 @@
             android:paddingEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtphonelg" />
+            app:layout_constraintTop_toBottomOf="@+id/txtuserlg" />
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -98,14 +98,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
-            android:text="Login"
-            app:layout_constraintTop_toBottomOf="@+id/loginbtn"
-            tools:layout_editor_absoluteX="16dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

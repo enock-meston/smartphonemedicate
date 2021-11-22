@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyViewHolder> {
     private LayoutInflater inflater;
     private ArrayList<DataModel> dataModelArrayList;
+    private SelectedUser selectedUser;
 
-    public RvAdapter(Context ctx, ArrayList<DataModel> dataModelArrayList) {
+    public RvAdapter(Context ctx, ArrayList<DataModel> dataModelArrayList,SelectedUser selectedUser) {
         inflater = LayoutInflater.from(ctx);
         this.dataModelArrayList = dataModelArrayList;
+        this.selectedUser = selectedUser;
     }
 
 
@@ -41,6 +43,11 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyViewHolder> {
         return dataModelArrayList.size();
     }
 
+    public interface SelectedUser{
+        void selectedUser(DataModel dataModel);
+
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView nameH, phoneH,diseaseH;
         public MyViewHolder(@NonNull View itemView) {
@@ -48,6 +55,13 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.MyViewHolder> {
             nameH = (TextView) itemView.findViewById(R.id.namestxt);
             phoneH = (TextView) itemView.findViewById(R.id.phonetxt);
             diseaseH = (TextView) itemView.findViewById(R.id.diseasetxt);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedUser.selectedUser(dataModelArrayList.get(getAdapterPosition()));
+                }
+            });
 
         }
     }

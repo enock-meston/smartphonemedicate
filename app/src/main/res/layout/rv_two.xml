@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="144dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inputdis"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:paddingStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="Names"
+                android:textColor="#3F51B5" />
+
+            <TextView
+                android:id="@+id/namestxt"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="ddd"
+                android:textColor="#3F51B5"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="219dp"
+                    android:layout_height="1dp"
+                    android:textSize="12sp"
+                    android:layout_weight="1"
+                    android:text="Phone Number"
+                    android:textColor="#3F51B5" />
+
+                <TextView
+                    android:id="@+id/phonetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:text="ddd"
+                    android:textColor="#3F51B5"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:layout_width="219dp"
+                    android:layout_height="4dp"
+                    android:layout_weight="1"
+                    android:text="Disease"
+                    android:textColor="#3F51B5"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/diseasetxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="ddd"
+                    android:textColor="#3F51B5"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

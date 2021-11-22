@@ -7,10 +7,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.nigoote.smartphonemedicate.ClientFragments.PetientActivity;
 
 public class AdminActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -29,11 +32,18 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
                 R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+            navigationView.setCheckedItem(R.id.home);
+        }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
+                break;
             case R.id.addpers:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AddPersonFragment()).commit();
                 break;
@@ -45,6 +55,14 @@ public class AdminActivity extends AppCompatActivity implements NavigationView.O
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ListPetientFragment()).commit();
 
                 break;
+            case R.id.logoutmenu:
+                final SharedPreferences sharedPreferences = getSharedPreferences("UserInfo",MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(getResources().getString(R.string.prefLoginState),"loggedout");
+                editor.apply();
+                startActivity((new Intent(AdminActivity.this, MainActivity.class)));
+                finish();
+                return true;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

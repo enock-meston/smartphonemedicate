@@ -4,27 +4,21 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/home"
+            android:id="@+id/petienthome"
             android:icon="@drawable/ic_baseline_home"
             android:title="Home" />
+        <item
+            android:id="@+id/settimemenu"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="Setting" />
 
         <item
-            android:id="@+id/addpers"
-            android:icon="@drawable/ic_baseline_person_add_24"
-            android:title="Add Petient" />
-
-        <item
-            android:id="@+id/addmedecine"
+            android:id="@+id/mypills"
             android:icon="@drawable/ic_baseline_medical_services_24"
-            android:title="Add Med Pills" />
+            android:title="My Pills" />
 
         <item
-            android:id="@+id/Personlist"
-            android:icon="@drawable/ic_baseline_view_list_24"
-            android:title="List" />
-
-        <item
-            android:id="@+id/logoutmenu"
+            android:id="@+id/logoutmenu2"
             android:icon="@drawable/ic_baseline_close_24"
             android:title="Logout" />
 

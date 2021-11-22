@@ -1,6 +1,8 @@
 package com.nigoote.smartphonemedicate;
 
-public class DataModel {
+import java.io.Serializable;
+
+public class DataModel implements Serializable {
     private String names,phoneNumber,disease,code1;
 
     public String getNames() {

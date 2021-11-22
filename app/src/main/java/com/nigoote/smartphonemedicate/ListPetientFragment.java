@@ -1,6 +1,7 @@
 package com.nigoote.smartphonemedicate;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,9 +30,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class ListPetientFragment extends Fragment {
+public class ListPetientFragment extends Fragment implements RvAdapter.SelectedUser{
 
-    private String URLstring = "http://192.168.43.29:8080/emedical/list.php";
+    private String URLstring = "http://192.168.137.1:8080/emedical/list.php";
     private static ProgressDialog mProgressDialog;
     ArrayList<DataModel> dataModelArrayList;
     RvAdapter rvAdapter;
@@ -88,9 +89,10 @@ public class ListPetientFragment extends Fragment {
 
         requestQueue.add(stringRequest);
 
+//        ========
     }
     private void setupRecycler(){
-        rvAdapter = new RvAdapter(getContext(),dataModelArrayList);
+        rvAdapter = new RvAdapter(getContext(),dataModelArrayList,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(rvAdapter);
         rvAdapter.notifyDataSetChanged();
@@ -98,4 +100,8 @@ public class ListPetientFragment extends Fragment {
 
     }
 
+    @Override
+    public void selectedUser(DataModel dataModel) {
+        startActivity(new Intent(getActivity(),SelectedUserActivity.class).putExtra("data",dataModel));
+    }
 }
