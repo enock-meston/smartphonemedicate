@@ -32,7 +32,7 @@ import java.util.Map;
 public class AddPillsFragment extends Fragment {
     EditText pillsName;
     Button savebtn;
-    String URLpath ="http://192.168.43.29:8080/";
+    String URLpath ="http://192.168.13.120/";
 
     public AddPillsFragment() {
 

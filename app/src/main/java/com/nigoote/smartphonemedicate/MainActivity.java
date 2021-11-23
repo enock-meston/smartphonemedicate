@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    String UrlPath = "http://192.168.43.29:8080/";
+    String UrlPath = "http://192.168.13.120/";
     Button login;
     CheckBox loginState;
     EditText Username,PasswordLg;
