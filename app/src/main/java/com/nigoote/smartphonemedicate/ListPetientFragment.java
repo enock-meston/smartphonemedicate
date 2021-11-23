@@ -32,7 +32,7 @@ import java.util.ArrayList;
 
 public class ListPetientFragment extends Fragment implements RvAdapter.SelectedUser{
 
-    private String URLstring = "http://192.168.137.1:8080/emedical/list.php";
+    private String URLstring = "http://192.168.43.29:8080/emedical/list.php";
     private static ProgressDialog mProgressDialog;
     ArrayList<DataModel> dataModelArrayList;
     RvAdapter rvAdapter;

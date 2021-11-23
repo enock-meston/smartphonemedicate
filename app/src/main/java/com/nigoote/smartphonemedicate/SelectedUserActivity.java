@@ -26,9 +26,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class SelectedUserActivity extends AppCompatActivity {
-    String URLPath ="http://192.168.137.1:8080/";
+    String URLPath ="http://192.168.43.29:8080/";
     TextView tvUser;
     Spinner spinner;
+    TextView pil;
     ArrayList<String> pillsList = new ArrayList<>();
     ArrayAdapter<String> pillsAdapter;
 
@@ -39,6 +40,7 @@ public class SelectedUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selected_user);
         tvUser = (TextView) findViewById(R.id.selecteduser);
         spinner = (Spinner) findViewById(R.id.spinner);
+        pil = (TextView) findViewById(R.id.select1);
 
         Intent intent =getIntent();
 
@@ -61,7 +63,10 @@ public class SelectedUserActivity extends AppCompatActivity {
                     for (int i=0; i <jsonArray.length();i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String pillsTitle =jsonObject.optString("title");
+                        Log.d("message1",pillsTitle);
+                        pil.setText(pillsTitle);
                         pillsList.add(pillsTitle);
+
                         pillsAdapter = new ArrayAdapter<>(SelectedUserActivity.this,
                                 android.R.layout.simple_spinner_item,pillsList);
                         pillsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
