@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.nigoote.smartphonemedicate.AddPersonFragment;
 import com.nigoote.smartphonemedicate.AddPillsFragment;
+import com.nigoote.smartphonemedicate.DataModel;
 import com.nigoote.smartphonemedicate.HomeFragment;
 import com.nigoote.smartphonemedicate.ListPetientFragment;
 import com.nigoote.smartphonemedicate.MainActivity;
@@ -22,6 +23,7 @@ import com.nigoote.smartphonemedicate.R;
 
 public class PetientActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer2;
+    DataModel dataModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

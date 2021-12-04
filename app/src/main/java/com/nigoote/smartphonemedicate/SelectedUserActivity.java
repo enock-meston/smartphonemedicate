@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SelectedUserActivity extends AppCompatActivity {
-    String URLPath = "http://192.168.13.120/";
+    String URLPath = "http://192.168.43.29:8080/";
     TextView tvUser;
     Spinner spinner;
     TextView pil;
@@ -82,7 +82,6 @@ public class SelectedUserActivity extends AppCompatActivity {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String pillsTitle = jsonObject.optString("title");
-                        pil.setText(pillsTitle);
                         pillsList.add(pillsTitle);
                         pillArr[i] = pillsTitle;
 
@@ -120,7 +119,7 @@ public class SelectedUserActivity extends AppCompatActivity {
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-              progressDialog.dismiss();
+                progressDialog.dismiss();
                 Toast.makeText(SelectedUserActivity.this,response, Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {

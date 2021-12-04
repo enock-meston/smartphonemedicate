@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    String UrlPath = "http://192.168.13.120/";
+    String UrlPath = "http://192.168.43.29:8080/";
     Button login;
     CheckBox loginState;
     EditText Username,PasswordLg;
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     editor.apply();
                     startActivity(new Intent(MainActivity.this,AdminActivity.class));
+
                 }else if(response.equals("Login_Success2")){
                     progressDialog.dismiss();
                     Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
