@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.nigoote.smartphonemedicate.AddPersonFragment;
@@ -56,6 +57,7 @@ public class PetientActivity extends AppCompatActivity implements NavigationView
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,new SetTimeFragment()).commit();
                 break;
             case R.id.mypills:
+                Toast.makeText(getApplicationContext(),"My pill selected",Toast.LENGTH_SHORT).show();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,new ViewAvailablePillsFragment()).commit();
                 break;
             case R.id.logoutmenu2:

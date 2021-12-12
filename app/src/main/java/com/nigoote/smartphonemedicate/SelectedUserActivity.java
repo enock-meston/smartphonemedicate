@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SelectedUserActivity extends AppCompatActivity {
-    String URLPath = "http://192.168.43.29:8080/";
+    String URLPath = Constant.host;
     TextView tvUser;
     Spinner spinner;
     TextView pil;

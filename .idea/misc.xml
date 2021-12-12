@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_selected_user.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_addperson.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_addpills.xml" value="0.1646403242147923" />
+        <entry key="app/src/main/res/layout/fragment_view_availabe_pills.xml" value="0.15715579710144928" />
+        <entry key="app/src/main/res/layout/recycler_pills.xml" value="0.21784420289855072" />
       </map>
     </option>
   </component>

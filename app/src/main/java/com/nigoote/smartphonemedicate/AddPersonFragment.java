@@ -33,7 +33,7 @@ import java.util.Map;
 public class AddPersonFragment extends Fragment {
     EditText Names,PhoneNumber,Username,Password,Disease;
     Button SaveBTN;
-    String URLpath ="http://192.168.43.29:8080/";
+    String URLpath =Constant.host;
     public AddPersonFragment() {
         //fragment Constructor
     }
