@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -20,11 +21,13 @@ import com.nigoote.smartphonemedicate.DataModel;
 import com.nigoote.smartphonemedicate.HomeFragment;
 import com.nigoote.smartphonemedicate.ListPetientFragment;
 import com.nigoote.smartphonemedicate.MainActivity;
+import com.nigoote.smartphonemedicate.MyPillAdapter;
 import com.nigoote.smartphonemedicate.R;
 
 public class PetientActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer2;
-    DataModel dataModel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +54,7 @@ public class PetientActivity extends AppCompatActivity implements NavigationView
 
         switch (item.getItemId()){
             case R.id.petienthome:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,new HomePetientFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,new BlankFragment()).commit();
                 break;
             case R.id.settimemenu:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,new SetTimeFragment()).commit();

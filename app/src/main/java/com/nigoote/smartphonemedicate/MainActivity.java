@@ -23,6 +23,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.nigoote.smartphonemedicate.ClientFragments.BlankFragment;
+import com.nigoote.smartphonemedicate.ClientFragments.HomePetientFragment;
 import com.nigoote.smartphonemedicate.ClientFragments.PetientActivity;
 
 import org.json.JSONException;
@@ -38,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     EditText Username, PasswordLg;
 
     SharedPreferences sharedPreferences;
-    private String phone;
     boolean VISIBLE_PASSWORD = false;
 
     @Override
@@ -92,7 +93,14 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("names",resp.getString("names"));
                         editor.putString("phone",resp.getString("phoneNumber"));
                         editor.putString("userType",resp.getString("userType"));
+//                        passing data from this activity to fragment
 
+                            Bundle bundle = new Bundle();
+                            bundle.putString("namess",resp.getString("names"));
+                            BlankFragment homePetientFragment = new BlankFragment();
+                            homePetientFragment.setArguments(bundle);
+                            homePetientFragment.newInstance(resp.getString("names"));
+//                        ends of putting the Data to Fragment
                         if (response.equals("Login_Success")) {
                             progressDialog.dismiss();
                             Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
@@ -102,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
                                 editor.putString(getResources().getString(R.string.prefLoginState), "loggedout");
                             }
                             editor.apply();
+//                            Intent intent = new Intent(MainActivity.this, AdminActivity.class);
                             startActivity(new Intent(MainActivity.this, AdminActivity.class));
-
+//                            intent.putExtra("names",resp.getString("names"));
+//                            startActivity(intent);
                         } else if (response.equals("Login_Success2")) {
                             progressDialog.dismiss();
                             Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
